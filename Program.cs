@@ -32,4 +32,8 @@ var app = builder.Build();
     app.MapControllers();
 }
 
-app.Run("http://localhost:4000");
+// Note: For production (simply.com) it needs to be without localhost !
+app.Run();
+
+// Only for local developement !
+//app.Run("http://localhost:4000");

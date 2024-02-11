@@ -22,11 +22,12 @@ public class UsersController : ControllerBase
         var response = _userService.Authenticate(model);
 
         if (response == null)
-            return BadRequest(new { message = "Username or password is incorrect" });
+            return BadRequest(new { message = "Username or password is not correct !" });
 
         return Ok(response);
     }
-
+    
+    // Note: outcomment /remove autorize attribute for testing if needed !
     [Authorize]
     [HttpGet]
     public IActionResult GetAll()
